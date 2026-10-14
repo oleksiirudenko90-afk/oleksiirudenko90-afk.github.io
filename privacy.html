@@ -19,31 +19,41 @@
 <body>
 <main>
   <h1>Privacy policy</h1>
-  <p class="muted">zeromail · Effective 8 October 2026</p>
+  <p class="muted">zeromail · Effective 14 October 2026</p>
 
-  <p>zeromail is a personal Gmail app for macOS, made by one person for their own use. It isn't sold or offered to the public. This page explains what it does with Google account data.</p>
+  <p>zeromail is a personal Gmail app for the Mac and the iPhone, made by one person for their own use. It isn't sold or offered to the public. This page explains what both apps do with Google account data. Everything below applies to the Mac app and the iPhone app alike unless it says otherwise.</p>
 
   <h2>What zeromail accesses</h2>
   <p>After you sign in with Google and give permission, zeromail accesses:</p>
   <ul>
-    <li><b>Gmail:</b> your messages, labels and drafts, so it can show, sort, archive, label and send mail when you ask it to.</li>
-    <li><b>Google Calendar:</b> your events, so it can show your day next to an invitation, answer invitations and add bookings to your calendar when you ask it to.</li>
+    <li><b>Gmail:</b> your messages, labels and drafts, so it can show, sort, archive, label and send mail when you ask it to. zeromail can't permanently delete mail.</li>
+    <li><b>Google Calendar:</b> your events and the list of your calendars, so it can show your day next to an invitation and in the calendar view, answer invitations, share your free times in an email and add bookings to your calendar when you ask it to.</li>
+    <li><b>Google Contacts (read-only):</b> your contacts and the people you've emailed ("other contacts"), so it can suggest recipients as you type an address and show people's photos. zeromail never creates, changes or deletes contacts.</li>
     <li><b>Basic profile:</b> your name, email address and profile photo, to show which account you're using.</li>
   </ul>
 
   <h2>How the data is used</h2>
   <ul>
-    <li>Only to provide zeromail's features to you on your own Mac.</li>
+    <li>Only to provide zeromail's features to you on your own Mac and iPhone.</li>
     <li>zeromail never sends, deletes, changes or answers anything unless you ask it to.</li>
     <li>No advertising, no profiling, no analytics and no tracking.</li>
+    <li>zeromail's own settings and reminders are kept in step between your Mac and iPhone through a message in your own Gmail account (under the label "zeromail/Settings"), not through any other server.</li>
   </ul>
 
   <h2>Where the data is stored</h2>
   <ul>
-    <li>A copy of your mail and settings is stored only on your Mac, in zeromail's app folder, so it opens instantly and works offline.</li>
-    <li>Sign-in tokens are encrypted with a key kept in the macOS Keychain.</li>
-    <li>Data travels only between your Mac and Google, over encrypted connections (HTTPS). There is no zeromail server, and no data is sent to the developer or anyone else.</li>
-    <li>The optional "Write with AI" feature runs entirely on your Mac using Apple's built-in on-device model. No email text leaves your Mac for it.</li>
+    <li>A copy of your mail and settings is stored only on your devices, in zeromail's app folder on the Mac and in the app's private storage on the iPhone, so it opens instantly and works offline.</li>
+    <li>Sign-in tokens are kept in the Keychain: on the Mac encrypted with a key held in the macOS Keychain, on the iPhone in the iOS Keychain, available only on that device.</li>
+    <li>Data travels only between your devices and Google, over encrypted connections (HTTPS). There is no zeromail server that sees your email, and no data is sent to the developer or anyone else. The only cloud part is the optional notification relay described below.</li>
+    <li>To show a company's logo next to its email, the iPhone app asks Google's public icon service for that sender's website icon by its domain name (for example "example.com"); no email content or address is sent.</li>
+    <li>The optional "Write with AI" and "Translate" features run entirely on your device using Apple's built-in on-device models. No email text leaves your device for them.</li>
+  </ul>
+
+  <h2>Instant notifications (iPhone, when turned on)</h2>
+  <ul>
+    <li>Gmail tells a small relay in the developer's own Google Cloud project that your inbox changed: your account address and a change number, no email content. The relay forwards a "check your mail" signal through Apple's push service to your iPhone, which then reads the new email from Gmail itself and shows the notification.</li>
+    <li>The relay stores only a one-way hash of your email address and your device's push token. It never receives email, contacts, calendar data or anything that could sign in to your Google account.</li>
+    <li>Signing out on the iPhone deletes them from the relay and stops Gmail's signal; Google also stops the signal by itself within 7 days if the app doesn't renew it.</li>
   </ul>
 
   <h2>Sharing</h2>
@@ -54,9 +64,10 @@
 
   <h2>Removing access and data</h2>
   <ul>
-    <li>In zeromail (Settings → Accounts), <b>Sign out</b> revokes the app's access to that account, and <b>Remove</b> deletes the account's data stored on your Mac.</li>
+    <li>On the Mac (Settings → Accounts), <b>Sign out</b> revokes the app's access to that account, and <b>Remove</b> deletes the account's data stored on your Mac.</li>
+    <li>On the iPhone, signing out of an account revokes the app's access and deletes that account's data stored on the phone.</li>
     <li>You can also remove zeromail's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
-    <li>Deleting the app and its app folder removes everything it stored.</li>
+    <li>Deleting the app (and, on the Mac, its app folder) removes everything it stored on that device.</li>
   </ul>
 
   <h2>Contact</h2>
